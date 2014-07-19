@@ -1,4 +1,11 @@
-<p id="notice"><%= notice %></p>
+<div>
+  <h1><%= @card.word %></h1>
+  <ul>
+    <li><%= @card.definition %></li>
+    <li><%= @card.language %></li>
+  </ul>
+</div>
+
 
 <%= link_to 'Edit', edit_card_path(@card) %> |
 <%= link_to 'Back', cards_path %>
