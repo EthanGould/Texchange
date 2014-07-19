@@ -1,23 +1,35 @@
-<h2 class='word'>WELCOM teXchange</h2>
 <div class='container'>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Word</th>
-        <th>Language</th>
-        <th>Answered</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @cards.each do |card| %>
-        <tr>
-          <td><%= card.word %></td>
-          <td><%= card.language %></td>
-          <td>yes</td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+  <div class='row'>
+    <div class='col-md-7'>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Word</th>
+            <th>Language</th>
+            <th>Answered</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cards.each do |card| %>
+            <tr>
+              <td>
+                <div class='mini-card'>
+                  <div class='mini-words'>
+                    <p><%=link_to card.word, card_path(card.id) %><p>
+                  </div>
+                </div>
+              </td>
+              <td><%= card.language %></td>
+              <td>yes</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class='col-md-5 right-panel'>
+      <h2 class='word'>WELCOME teXchange</h2>
+    </div>
+  </div>
 </div>
 <br>
 

@@ -33,6 +33,7 @@
 .word{
   text-align: center;
   margin-bottom: 30px;
+  color: white;
 }
 .part-of-speech{
   margin-top: 15px;
@@ -44,4 +45,19 @@
 .devise-login{
   position: absolute;
   right: 20px;
+}
+.mini-card{
+  height: 50px;
+  width: 50px;
+  border: solid black 1px;
+  border-radius: 7px;
+}
+.mini-words{
+  font-size: 8px;
+  text-align: center;
+  margin-top: 17px;
+}
+.right-panel{
+  height: 500px;
+  background-color: black;
 }
