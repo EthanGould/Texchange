@@ -1,24 +1,24 @@
-<h1>Listing cards</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cards.each do |card| %>
+<h2 class='word'>WELCOM teXchange</h2>
+<div class='container'>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= card.word %></td>
-        <td><%= link_to 'Show', card %></td>
-        <td><%= link_to 'Edit', edit_card_path(card) %></td>
-        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Word</th>
+        <th>Language</th>
+        <th>Answered</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+      <% @cards.each do |card| %>
+        <tr>
+          <td><%= card.word %></td>
+          <td><%= card.language %></td>
+          <td>yes</td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 <br>
 
 <%= link_to 'New Card', new_card_path %>

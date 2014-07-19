@@ -28,7 +28,7 @@
 .options{
   position: absolute;
   top: 10px;
-  right: 10px;
+  left: 10px;
 }
 .word{
   text-align: center;
@@ -40,4 +40,8 @@
 .sentence{
   position: absolute;
   bottom: 20px;
+}
+.devise-login{
+  position: absolute;
+  right: 20px;
 }
