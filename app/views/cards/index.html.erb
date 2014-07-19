@@ -33,9 +33,9 @@
       <% end %>
       <div class='devise-login'>
         <% if user_signed_in? %>
-          <%= link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-default' %>  <%= link_to "Logout",destroy_user_session_path, class: 'btn btn-default',method: :delete %>
+          <%= link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-default blah' %>  <%= link_to "Logout",destroy_user_session_path, class: 'btn btn-default blah',method: :delete %>
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-default' %> <%= link_to "Login", new_user_session_path, class: 'btn btn-default' %>
+          <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-default blah' %> <%= link_to "Login", new_user_session_path, class: 'btn btn-default blah' %>
         <% end %>
       </div>
       <% if user_signed_in? %>

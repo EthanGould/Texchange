@@ -7,13 +7,17 @@
     <div class="def">
       <p><b><u>Definition:</u></b> <%= @card.definition %></p>
     </div>
-    <div class='sentence well'>
-      <p><b><u>Sentence:</u></b> <%= @card.sentences.first.content %></p>
-    </div>
+    <% if @card.sentences.exists? %>
+      <div class='sentence well'>
+        <p><b><u>Sentence:</u></b> <%= @card.sentences.first.content %></p>
+      </div>
+    <% else %>
+      <%= link_to 'Add a sentence', new_card_sentence_path(@card), class: 'btn  btn-success'%>
+    <% end %>
   </div>
   <div class='options'>
-    <%= link_to 'Edit', edit_card_path(@card), class: 'btn btn-default' %>
-    <%= link_to 'Back', cards_path, class: 'btn btn-default' %>
+    <%= link_to 'Edit', edit_card_path(@card), class: 'btn btn-default blah' %>
+    <%= link_to 'Back', cards_path, class: 'btn btn-default blah' %>
   </div>
 </div>
 

@@ -25,11 +25,11 @@ class SentencesController < ApplicationController
   # POST /sentences.json
   def create
     @sentence = Sentence.new(sentence_params)
-    @card = Card.find(params[:id])
+    @card = Card.find(params[:card_id])
 
     respond_to do |format|
       if @sentence.save
-        format.html { redirect_to @sentence, notice: 'Sentence was successfully created.' }
+        format.html { redirect_to @card, notice: 'Sentence was successfully created.' }
         format.json { render :show, status: :created, location: @sentence }
       else
         format.html { render :new }
