@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :relationships, foreign_key: "student_id", dependent: :destroy
   has_many :teachers, through: :relationships, source: :teachers
   has_many :students, through: :relationships, source: :students
+<<<<<<< HEAD
   validates :username, :uniqueness => {:case_sensitive => false}
 
   attr_accessor :login
@@ -21,6 +22,9 @@ class User < ActiveRecord::Base
     end
   end
 
+=======
+  
+>>>>>>> development
   def following?(other_user)
     relationships.find_by(teacher_id: other_user.id)
   end
