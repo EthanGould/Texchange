@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719182755) do
+ActiveRecord::Schema.define(version: 20140719210352) do
 
   create_table "cards", force: true do |t|
     t.text     "word"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140719182755) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "speech"
+    t.text     "picture"
   end
 
   create_table "relationships", force: true do |t|
@@ -48,7 +49,10 @@ ActiveRecord::Schema.define(version: 20140719182755) do
     t.integer  "points"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "card_id"
   end
+
+  add_index "sentences", ["card_id"], name: "index_sentences_on_card_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

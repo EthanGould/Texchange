@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :relationships, foreign_key: "student_id", dependent: :destroy
   has_many :teachers, through: :relationships, source: :teachers
   has_many :students, through: :relationships, source: :students
+  
   def following?(other_user)
     relationships.find_by(teacher_id: other_user.id)
   end
