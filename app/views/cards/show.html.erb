@@ -2,13 +2,13 @@
   <div class='card'>
     <div class='word'>
       <h2><%= @card.word %></h2>
-      <p class='part-of-speech'>noun</p>
+      <img src=<%= @card.picture %> height='70', width='70'>
     </div>
     <div class="def">
       <p><b><u>Definition:</u></b> <%= @card.definition %></p>
     </div>
     <div class='sentence well'>
-      <p>here is some word in a sentence</p>
+      <p><b><u>Sentence:</u></b> <%= @card.sentences.first.content %></p>
     </div>
   </div>
   <div class='options'>

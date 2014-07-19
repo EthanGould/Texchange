@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140719210352) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "cards", force: true do |t|
     t.text     "word"
     t.text     "definition"
@@ -30,9 +33,9 @@ ActiveRecord::Schema.define(version: 20140719210352) do
     t.datetime "updated_at"
   end
 
-  add_index "relationships", ["student_id", "teacher_id"], name: "index_relationships_on_student_id_and_teacher_id", unique: true
-  add_index "relationships", ["student_id"], name: "index_relationships_on_student_id"
-  add_index "relationships", ["teacher_id"], name: "index_relationships_on_teacher_id"
+  add_index "relationships", ["student_id", "teacher_id"], name: "index_relationships_on_student_id_and_teacher_id", unique: true, using: :btree
+  add_index "relationships", ["student_id"], name: "index_relationships_on_student_id", using: :btree
+  add_index "relationships", ["teacher_id"], name: "index_relationships_on_teacher_id", using: :btree
 
   create_table "requests", force: true do |t|
     t.text     "content"
@@ -52,7 +55,7 @@ ActiveRecord::Schema.define(version: 20140719210352) do
     t.integer  "card_id"
   end
 
-  add_index "sentences", ["card_id"], name: "index_sentences_on_card_id"
+  add_index "sentences", ["card_id"], name: "index_sentences_on_card_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -71,8 +74,8 @@ ActiveRecord::Schema.define(version: 20140719210352) do
     t.string   "username"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  add_index "users", ["username"], name: "index_users_on_username", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
 end
