@@ -27,7 +27,22 @@
       </table>
     </div>
     <div class='col-md-5 right-panel'>
-      <h2 class='word'>WELCOME teXchange</h2>
+      <img src="http://i.imgur.com/YkgiVPY.png" height='100' width='450'>
+      <% if current_user.present? %>
+        <h2 class='word'>Welcome, <%= current_user.username %></h2>
+      <% end %>
+      <div class='devise-login'>
+        <% if user_signed_in? %>
+          <%= link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-default' %>  <%= link_to "Logout",destroy_user_session_path, class: 'btn btn-default',method: :delete %>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-default' %> <%= link_to "Login", new_user_session_path, class: 'btn btn-default' %>
+        <% end %>
+      </div>
+      <% if user_signed_in? %>
+        <div class='devise-message'>
+          Logged in as <%= current_user.username %>.
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

@@ -8,6 +8,19 @@ class User < ActiveRecord::Base
   has_many :relationships, foreign_key: "student_id", dependent: :destroy
   has_many :teachers, through: :relationships, source: :teachers
   has_many :students, through: :relationships, source: :students
+  validates :username, :uniqueness => {:case_sensitive => false}
+
+  attr_accessor :login
+
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["lower(username) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions).first
+    end
+  end
+
   def following?(other_user)
     relationships.find_by(teacher_id: other_user.id)
   end

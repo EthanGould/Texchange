@@ -44,20 +44,36 @@
 }
 .devise-login{
   position: absolute;
+  top: 10px ;
   right: 20px;
+  width: 100px;
+  text-align: center;
+}
+.devise-message{
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  color: grey;
 }
 .mini-card{
-  height: 50px;
-  width: 50px;
+  height: 80px;
+  width: 80px;
   border: solid black 1px;
   border-radius: 7px;
 }
 .mini-words{
-  font-size: 8px;
+  font-size: 16px;
   text-align: center;
-  margin-top: 17px;
+  margin-top: 30%;
 }
 .right-panel{
-  height: 500px;
+  position: absolute;
+  position: fixed;
+  right: 0;
+  height: 100%;
   background-color: black;
+}
+.btn{
+  margin-top: 10px;
+  width: 80px;
 }
