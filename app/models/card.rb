@@ -6,5 +6,4 @@ class Card < ActiveRecord::Base
   	api_url = "https://api.pearson.com/v2/dictionaries/ldec/entries?headword=#{word}&apikey=#{api_key}"
   	HTTParty.get(api_url)
   end
-
 end
