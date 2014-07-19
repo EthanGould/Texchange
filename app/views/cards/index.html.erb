@@ -1,24 +1,36 @@
-<h1>Listing cards</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cards.each do |card| %>
-      <tr>
-        <td><%= card.word %></td>
-        <td><%= link_to 'Show', card %></td>
-        <td><%= link_to 'Edit', edit_card_path(card) %></td>
-        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-7'>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Word</th>
+            <th>Language</th>
+            <th>Answered</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cards.each do |card| %>
+            <tr>
+              <td>
+                <div class='mini-card'>
+                  <div class='mini-words'>
+                    <p><%=link_to card.word, card_path(card.id) %><p>
+                  </div>
+                </div>
+              </td>
+              <td><%= card.language %></td>
+              <td>yes</td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+    <div class='col-md-5 right-panel'>
+      <h2 class='word'>WELCOME teXchange</h2>
+    </div>
+  </div>
+</div>
 <br>
 
 <%= link_to 'New Card', new_card_path %>

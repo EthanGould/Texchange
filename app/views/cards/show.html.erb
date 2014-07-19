@@ -1,11 +1,19 @@
-<div>
-  <h1><%= @card.word %></h1>
-  <ul>
-    <li><%= @card.definition %></li>
-    <li><%= @card.language %></li>
-  </ul>
+<div class='container'>
+  <div class='card'>
+    <div class='word'>
+      <h2><%= @card.word %></h2>
+      <p class='part-of-speech'>noun</p>
+    </div>
+    <div class="def">
+      <p><b><u>Definition:</u></b> <%= @card.definition %></p>
+    </div>
+    <div class='sentence well'>
+      <p>here is some word in a sentence</p>
+    </div>
+  </div>
+  <div class='options'>
+    <%= link_to 'Edit', edit_card_path(@card), class: 'btn btn-default' %>
+    <%= link_to 'Back', cards_path, class: 'btn btn-default' %>
+  </div>
 </div>
 
-
-<%= link_to 'Edit', edit_card_path(@card) %> |
-<%= link_to 'Back', cards_path %>
