@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140719144048) do
+ActiveRecord::Schema.define(version: 20140719182755) do
 
   create_table "cards", force: true do |t|
     t.text     "word"
@@ -19,7 +19,19 @@ ActiveRecord::Schema.define(version: 20140719144048) do
     t.string   "language"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "speech"
   end
+
+  create_table "relationships", force: true do |t|
+    t.integer  "student_id"
+    t.integer  "teacher_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "relationships", ["student_id", "teacher_id"], name: "index_relationships_on_student_id_and_teacher_id", unique: true
+  add_index "relationships", ["student_id"], name: "index_relationships_on_student_id"
+  add_index "relationships", ["teacher_id"], name: "index_relationships_on_teacher_id"
 
   create_table "requests", force: true do |t|
     t.text     "content"

@@ -30,8 +30,11 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
-
       t.timestamps
+
+      #Adding in following sets
+      t.array   :teachers
+      t.array   :students
     end
 
     add_index :users, :email,                unique: true
