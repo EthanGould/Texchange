@@ -25,6 +25,7 @@ class SentencesController < ApplicationController
   # POST /sentences.json
   def create
     @sentence = Sentence.new(sentence_params)
+    @card = Card.find(params[:id])
 
     respond_to do |format|
       if @sentence.save
