@@ -1,6 +1,6 @@
 #encoding: utf-8
-card1 = Card.create(word: 'apple', definition: 'yummy fruit, usually red or green', language: 'English', picture: 'http://eofdreams.com/data_images/dreams/apple/apple-05.jpg')
-card2 = Card.create(word: '苹果', definition: '一种常见的水果', language: 'Chinese', picture: 'http://eofdreams.com/data_images/dreams/apple/apple-05.jpg')
+card1 = Card.create(word: 'apple', definition: 'yummy fruit, usually red or green', language: 'English', picture: 'http://www.theproducemom.com/wp-content/uploads/2012/01/gala-apple-300x300.jpg')
+card2 = Card.create(word: '苹果', definition: '一种常见的水果', language: 'Chinese', picture: 'http://www.theproducemom.com/wp-content/uploads/2012/01/gala-apple-300x300.jpg')
 card3 = Card.create(word: '元宵', definition: '一种传统的中国食物,一般在元宵节吃', language: 'Chinese', picture: 'http://windhorsetour.com/sites/windhorsetour.com/files/styles/large/public/yuanxiao-or-tangyuan.jpg?itok=_J3ay658')
 card4 = Card.create(word: '打的', definition: '乘坐出租车', language: 'Chinese', picture: 'http://img.jillkonrath.com/hs-fs/hub/110248/file-16520267-jpg/images/blogs/why-i-cant-catch-a-taxi-04-19-2012-hail-cab.jpg')
 card5 = Card.create(word: '安检', definition: '安全检查', language: 'Chinese', picture: 'http://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Berlin_Sch%C3%B6nefeld_Airport_metal_detectors.jpg/220px-Berlin_Sch%C3%B6nefeld_Airport_metal_detectors.jpg')
