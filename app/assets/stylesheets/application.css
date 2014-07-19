@@ -74,6 +74,8 @@
   right: 0;
   height: 100%;
   background-color: rgba(60, 135, 247, 0.6);
+  padding: 50px;
+  font-family: Tahoma, Genva, sans-serif;
 }
 .blah{
   margin-top: 10px;
